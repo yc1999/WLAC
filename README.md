@@ -5,7 +5,7 @@ This is a Shared task in WMT 2022. In this year, the shared task involves in two
 
 # Steps 
 
-- Download the datasets for De-En and Zh-EN (see the details in next section)
+- <b><font color="red">Download</font></b> the datasets for De-En and Zh-EN (see the details in next section)
 - Download the scripts in the directory scripts/ to preprocess the data.
 - Run the scripts to obtain the simulated training data for WLAC task from bilingual data.
 
@@ -95,3 +95,31 @@ zh-en
 ```
 
 for more details, you can check the `data/generate_samples.py`
+
+## Generate Samples
+**After tokenization**, if we want to **generate samples** for `data/zh-en` .
+
+Just run following commands:
+1. Install `pypinyin`:
+    ```bash
+    pip install pypinyin
+    ```
+2. Run `generate_samples.py`:
+    ```bash
+    python data/generate_samples.py --source-lang zh --target-lang en --file-prefix data/zh-en/UNv1.0.en-zh.tok
+    ```
+After above command, we get one more file in folder `zh-en`:
+
+
+for more details, you can check the `data/generate_samples.py`
+
+```bash
+zh-en
+├── UNv1.0.en
+├── train.en.tok
+├── train.samples
+├── train.zh
+└── train.zh.tok
+
+0 directories, 5 files
+```
