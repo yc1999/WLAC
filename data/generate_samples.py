@@ -1,12 +1,10 @@
 """
 This file is used to generate samples for train/dev/test set
 """
-import jieba
 import json
 import random
 import argparse
 from tqdm import tqdm
-import os
 from pypinyin import lazy_pinyin
 
 def generate_bi_context(lang, tgt_sentence):
@@ -29,6 +27,7 @@ def generate_bi_context(lang, tgt_sentence):
         target = "".join(lazy_pinyin(tgt_sentence[position]))
         typed_seq_length = random.randint( 1, len(target) )
         typed_seq = target[ :typed_seq_length ]
+        target = tgt_sentence[position]
     
 
     return left_context, right_context, typed_seq, target
@@ -52,6 +51,7 @@ def generate_prefix(lang, tgt_sentence):
         target = "".join(lazy_pinyin(tgt_sentence[position]))
         typed_seq_length = random.randint( 1, len(target) )
         typed_seq = target[ :typed_seq_length ]
+        target = tgt_sentence[position]
 
     return left_context, right_context, typed_seq, target    
 
@@ -74,6 +74,7 @@ def generate_suffix(lang, tgt_sentence):
         target = "".join(lazy_pinyin(tgt_sentence[position]))
         typed_seq_length = random.randint( 1, len(target) )
         typed_seq = target[ :typed_seq_length ]
+        target = tgt_sentence[position]
 
     return left_context, right_context, typed_seq, target
 
@@ -94,6 +95,7 @@ def generate_zero_context(lang, tgt_sentence):
         target = "".join(lazy_pinyin(tgt_sentence[position]))
         typed_seq_length = random.randint( 1, len(target) )
         typed_seq = target[ :typed_seq_length ]
+        target = tgt_sentence[position]
 
     return left_context, right_context, typed_seq, target 
 
