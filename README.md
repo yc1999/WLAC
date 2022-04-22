@@ -5,7 +5,7 @@ This is a Shared task in WMT 2022. In this year, the shared task involves in two
 
 # Steps 
 
-- ❗<b><font color="red">Download</font></b>❗ the datasets for De-En and Zh-EN (see the details in next section)
+- ❗❗❗Download the datasets for De-En and Zh-EN (see the details in next section)
 - Download the scripts in the directory scripts/ to preprocess the data.
 - Run the scripts to obtain the simulated training data for WLAC task from bilingual data.
 
